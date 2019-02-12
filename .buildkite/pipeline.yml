@@ -62,11 +62,11 @@ steps:
 
   - command: |
         echo "--- :arrow_down: Downloading brew files" && \
-        buildkite-agent artifact download "build/packages/eosio.rb" . --step ":darwin: High Sierra Package Builder" \
+        buildkite-agent artifact download "build/packages/eosio.rb" . --step ":darwin: High Sierra Package Builder" && ls \
     label: ":darwin: High Sierra Brew Getter"
     agents:
       - "role=macos-builder"
       - "os=high-sierra"
     artifact_paths:
-      - "eosio.rb"
+      - "build/packages/eosio.rb"
     timeout: 60
